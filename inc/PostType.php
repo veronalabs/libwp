@@ -134,6 +134,19 @@ class PostType
     }
 
     /**
+     * Set arguments
+     *
+     * @param $argument
+     * @param $value
+     * @return $this
+     */
+    public function setArgument($argument, $value)
+    {
+        $this->arguments[$argument] = $value;
+        return $this;
+    }
+
+    /**
      * Initial the post type hook
      */
     public function register()

@@ -36,6 +36,7 @@ Snail()->postType()
     ->setFeatures([
         'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'
     ])
+    ->setArgument('show_ui', true)
     ->register();
 ```
 

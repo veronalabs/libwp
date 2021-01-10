@@ -18,7 +18,7 @@ class SnailFactory
     /**
      * Instance of the class.
      *
-     * @return SnailFactory|WooCommerce|null
+     * @return SnailFactory|null
      */
     public static function instance()
     {
