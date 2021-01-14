@@ -1,11 +1,11 @@
-﻿=== Snail ===
+﻿=== LibWp ===
 Contributors: mostafa.s1990, kashani, veronalabs
 Donate link: https://wp-sms-pro.com/donate
 Tags: theme, functionality, post-type, taxonomy, library
 Requires at least: 3.0
 Tested up to: 5.6
 Requires PHP: 7.1
-Stable tag: 1.0
+Stable tag: 2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,23 +18,23 @@ Provide some simple functionality to register some hooks that could not register
 
 Get instance of main class.
 
-    Snail();
+    LibWp();
 
 ## Factories
 
 **Post type**
 
-    Snail()->postType();
+    LibWp()->postType();
 
 **Taxonomy**
 
-    Snail()->taxonomy();
+    LibWp()->taxonomy();
 
 ## Examples
 
 ### Register a new taxonomy
 
-    Snail()->postType()
+    LibWp()->postType()
         ->setName('book')
         ->setLabels([
             'name'          => _x('Books', 'Post type general name', 'textdomain'),
@@ -54,7 +54,7 @@ Get instance of main class.
 
 ### Register a new taxonomy belongs to previous post type
 
-    Snail()->taxonomy()
+    LibWp()->taxonomy()
         ->setName('types')
         ->setPostTypes('book')
         ->setLabels([
@@ -71,8 +71,12 @@ Get instance of main class.
 
 
 == Installation ==
-1. Upload `snail` to the `/wp-content/plugins/` directory
+1. Upload `libwp` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
+
+== Upgrade Notice ==
+= 2.0 =
+* IMPORTANT: the structure is totally changed, so if you're using any functionality of the old version, upgrading to this version might break down your site.
 
 == Changelog ==
 = 1.0 =

@@ -1,28 +1,28 @@
-# Snail
+# LibWp
 Provide some simple functionality to register some hooks that could not register inside the WordPress themes
 
 ## Quick Start
 Get instance of main class.
 ```php
-Snail();
+LibWp();
 ```
 
 ## Factories
 **Post type**
 ```php
-Snail()->postType();
+LibWp()->postType();
 ```
 
 **Taxonomy**
 ```php
-Snail()->taxonomy();
+LibWp()->taxonomy();
 ```
 
 ## Examples
 
 ### Register a new taxonomy
 ```php
-Snail()->postType()
+LibWp()->postType()
     ->setName('book')
     ->setLabels([
         'name'          => _x('Books', 'Post type general name', 'textdomain'),
@@ -43,7 +43,7 @@ Snail()->postType()
 ### Register a new taxonomy belongs to previous post type
 
 ```php
-Snail()->taxonomy()
+LibWp()->taxonomy()
     ->setName('types')
     ->setPostTypes('book')
     ->setLabels([

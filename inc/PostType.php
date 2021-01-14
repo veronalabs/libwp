@@ -1,10 +1,10 @@
 <?php
 
-namespace Snail;
+namespace LibWp;
 
 /**
  * Class PostType
- * @package Snail
+ * @package LibWp
  */
 class PostType
 {

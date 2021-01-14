@@ -1,24 +1,24 @@
 <?php
 
-namespace Snail;
+namespace LibWp;
 
 /**
- * Class SnailFactory
- * @package Snail
+ * Class LibWpFactory
+ * @package LibWp
  */
-class SnailFactory
+class LibWpFactory
 {
     /**
      * The single instance of the class.
      *
-     * @var SnailFactory
+     * @var LibWpFactory
      */
     protected static $_instance = null;
 
     /**
      * Instance of the class.
      *
-     * @return SnailFactory|null
+     * @return LibWpFactory|null
      */
     public static function instance()
     {
@@ -29,7 +29,7 @@ class SnailFactory
     }
 
     /**
-     * SnailFactory constructor.
+     * LibWpFactory constructor.
      */
     public function __construct()
     {

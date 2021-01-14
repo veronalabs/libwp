@@ -1,10 +1,10 @@
 <?php
 
-namespace Snail;
+namespace LibWp;
 
 /**
  * Class Taxonomy
- * @package Snail
+ * @package LibWp
  */
 class Taxonomy
 {

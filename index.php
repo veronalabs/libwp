@@ -1,25 +1,25 @@
 <?php
 /**
- * Plugin Name: Snail
- * Plugin URI: https://github.com/vitathemes/snail
+ * Plugin Name: LibWp
+ * Plugin URI: https://github.com/vitathemes/libwp
  * Description: Provide some simple functionality to register some hooks that could not register inside the WordPress themes
- * Version: 1.0
+ * Version: 2.0
  * Author: VeronaLabs
  * Author URI: https://veronalabs.com/
  * Text Domain: deer
  * Domain Path: /resources/languages
  */
 
-use Snail\SnailFactory;
+use LibWp\LibWpFactory;
 
-require __DIR__ . '/snail.php';
+require __DIR__ . '/libwp.php';
 
 /**
- * Returns the main instance of Snail.
+ * Returns the main instance of LibWp.
  *
- * @return SnailFactory
+ * @return LibWpFactory
  */
-function Snail()
+function LibWp()
 {
-    return SnailFactory::instance();
+    return LibWpFactory::instance();
 }
