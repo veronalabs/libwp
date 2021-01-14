@@ -20,8 +20,6 @@ Get instance of main class.
 
     LibWp();
 
-## Factories
-
 **Post type**
 
     LibWp()->postType();
@@ -30,7 +28,6 @@ Get instance of main class.
 
     LibWp()->taxonomy();
 
-## Examples
 
 ### Register a new taxonomy
 
@@ -79,5 +76,8 @@ Get instance of main class.
 * IMPORTANT: the structure is totally changed, so if you're using any functionality of the old version, upgrading to this version might break down your site.
 
 == Changelog ==
+= 2.0 =
+* Changed the structure fo boilerplate
+
 = 1.0 =
 * Initial the plugin
