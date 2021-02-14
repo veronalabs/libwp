@@ -3,9 +3,9 @@ Contributors: mostafa.s1990, kashani, veronalabs
 Donate link: https://wp-sms-pro.com/donate
 Tags: theme, functionality, post-type, taxonomy, library
 Requires at least: 3.0
-Tested up to: 5.6
+Tested up to: 5.6.1
 Requires PHP: 7.1
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -54,6 +54,7 @@ Get instance of main class.
     LibWp()->taxonomy()
         ->setName('types')
         ->setPostTypes('book')
+        ->setArgument('show_in_rest', true)
         ->setLabels([
             'name'          => _x('Types', 'taxonomy general name', 'textdomain'),
             'singular_name' => _x('Type', 'taxonomy singular name', 'textdomain'),
@@ -76,6 +77,9 @@ Get instance of main class.
 * IMPORTANT: the structure is totally changed, so if you're using any functionality of the old version, upgrading to this version might break down your site.
 
 == Changelog ==
+= 2.1 =
+* Added support custom argument for register the taxonomy
+
 = 2.0 =
 * Changed the structure fo boilerplate
 

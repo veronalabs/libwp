@@ -111,6 +111,19 @@ class Taxonomy
     }
 
     /**
+     * Set arguments
+     *
+     * @param $argument
+     * @param $value
+     * @return $this
+     */
+    public function setArgument($argument, $value)
+    {
+        $this->arguments[$argument] = $value;
+        return $this;
+    }
+
+    /**
      * Initial the taxonomy hook
      */
     public function register()
