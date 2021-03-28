@@ -59,6 +59,79 @@ LibWp()->taxonomy()
     ->register();
 ```
 
+## Filters
+
+### Modify registered post type
+
+```php
+/**
+ * Modify LibWP post type name
+ */
+add_filter('libwp_post_type_1_name', function ($postTypeName) {
+    $postTypeName = 'project';
+    return $postTypeName;
+});
+
+/**
+ * Modify LibWP post type arguments
+ */
+add_filter('libwp_post_type_1_arguments', function ($postTypeArguments) {
+
+    $postTypeArguments['labels'] = [
+        'name'          => _x('Projects', 'Post type general name', 'cavatina'),
+        'singular_name' => _x('Project', 'Post type singular name', 'cavatina'),
+        'menu_name'     => _x('Projects', 'Admin Menu text', 'cavatina'),
+        'add_new'       => __('Add New', 'cavatina'),
+        'edit_item'     => __('Edit Project', 'cavatina'),
+        'view_item'     => __('View Project', 'cavatina'),
+        'all_items'     => __('All Projects', 'cavatina'),
+    ];
+    $taxonomyArguments['rewrite']['slug'] = 'project';
+
+    return $postTypeArguments;
+});
+```
+
+### Modify registered taxonomy
+
+```php
+/**
+ * Modify LibWP taxonomy name
+ */
+add_filter('libwp_taxonomy_1_name', function ($taxonomyName) {
+    $taxonomyName = 'projects';
+    return $taxonomyName;
+});
+
+/**
+ * Modify LibWP post type
+ */
+add_filter('libwp_taxonomy_1_post_type', function ($taxonomyPostTypeName) {
+    $taxonomyPostTypeName = 'project';
+    return $taxonomyPostTypeName;
+});
+
+/**
+ * Modify LibWP taxonomy name
+ */
+add_filter('libwp_taxonomy_1_arguments', function ($taxonomyArguments) {
+
+    $taxonomyArguments['labels'] = [
+        'name'          => _x('Project Categories', 'taxonomy general name', 'cavatina'),
+        'singular_name' => _x('Project Category', 'taxonomy singular name', 'cavatina'),
+        'search_items'  => __('Search Project Categories', 'cavatina'),
+        'all_items'     => __('All Project Categories', 'cavatina'),
+        'edit_item'     => __('Edit Project Category', 'cavatina'),
+        'add_new_item'  => __('Add New Project Category', 'cavatina'),
+        'new_item_name' => __('New Project Category Name', 'cavatina'),
+        'menu_name'     => __('Project Categories', 'cavatina'),
+    ];
+    $taxonomyArguments['rewrite']['slug'] = 'projects';
+
+    return $taxonomyArguments;
+});
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](https://github.com/thephpleague/container/blob/master/LICENSE.md) for more information.

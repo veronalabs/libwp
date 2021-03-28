@@ -9,6 +9,13 @@ namespace LibWp;
 class Taxonomy
 {
     /**
+     * Taxonomy ID
+     *
+     * @var string
+     */
+    private $id;
+
+    /**
      * Taxonomy name
      *
      * @var string
@@ -60,6 +67,18 @@ class Taxonomy
             'show_admin_column' => $this->showAdminColumn,
             'query_var'         => $this->queryVar,
         );
+    }
+
+    /**
+     * Set unique id
+     *
+     * @param $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
     }
 
     /**
@@ -131,6 +150,21 @@ class Taxonomy
         if (empty($this->arguments['rewrite']['slug'])) {
             $this->arguments['rewrite']['slug'] = $this->name;
         }
+
+        /**
+         * Filter taxonomy name
+         */
+        $this->name = apply_filters("libwp_taxonomy_{$this->id}_name", $this->name);
+
+        /**
+         * Filter taxonomy post type names
+         */
+        $this->postTypes = apply_filters("libwp_taxonomy_{$this->id}_post_type", $this->postTypes);
+
+        /**
+         * Filter taxonomy argument
+         */
+        $this->arguments = apply_filters("libwp_taxonomy_{$this->id}_arguments", $this->arguments);
 
         add_action('init', function () {
             register_taxonomy($this->name, $this->postTypes, $this->arguments);

@@ -5,7 +5,7 @@ Tags: theme, functionality, post-type, taxonomy, library
 Requires at least: 3.0
 Tested up to: 5.6.1
 Requires PHP: 7.1
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -77,6 +77,10 @@ Get instance of main class.
 * IMPORTANT: the structure is totally changed, so if you're using any functionality of the old version, upgrading to this version might break down your site.
 
 == Changelog ==
+= 2.2 =
+* Added support filters post type and taxonomy
+* Registered an example of post type & taxonomy after plugin initialization.
+
 = 2.1 =
 * Added support custom argument for register the taxonomy
 

@@ -9,6 +9,13 @@ namespace LibWp;
 class PostType
 {
     /**
+     * Post Type ID
+     *
+     * @var string
+     */
+    private $id;
+
+    /**
      * Post Type name
      *
      * @var string
@@ -86,6 +93,18 @@ class PostType
     }
 
     /**
+     * Set unique id
+     *
+     * @param $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
      * Set post type name
      *
      * @param $name
@@ -154,6 +173,16 @@ class PostType
         if (empty($this->arguments['rewrite']['slug'])) {
             $this->arguments['rewrite']['slug'] = $this->name;
         }
+
+        /**
+         * Filter post type name
+         */
+        $this->name = apply_filters("libwp_post_type_{$this->id}_name", $this->name);
+
+        /**
+         * Filter post type argument
+         */
+        $this->arguments = apply_filters("libwp_post_type_{$this->id}_arguments", $this->arguments);
 
         add_action('init', function () {
             register_post_type($this->name, $this->arguments);
