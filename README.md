@@ -86,7 +86,7 @@ add_filter('libwp_post_type_1_arguments', function ($postTypeArguments) {
         'view_item'     => __('View Project', 'cavatina'),
         'all_items'     => __('All Projects', 'cavatina'),
     ];
-    $taxonomyArguments['rewrite']['slug'] = 'project';
+    $postTypeArguments['rewrite']['slug'] = 'project';
 
     return $postTypeArguments;
 });
